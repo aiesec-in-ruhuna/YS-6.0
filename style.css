@@ -1,0 +1,119 @@
+/* Color Variables based on AIESEC Branding */
+:root {
+    --primary-blue: #037ef3;
+    --dark-blue: #003057;
+    --text-dark: #333333;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-dark);
+}
+
+/* Custom Primary Overrides */
+.text-primary {
+    color: var(--primary-blue) !important;
+}
+
+.bg-primary {
+    background-color: var(--primary-blue) !important;
+}
+
+.btn-primary {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+}
+
+.btn-primary:hover {
+    background-color: var(--dark-blue);
+    border-color: var(--dark-blue);
+}
+
+/* Navigation */
+.navbar {
+    transition: all 0.3s ease;
+    padding: 20px 0;
+}
+
+.navbar.scrolled {
+    background-color: rgba(0, 48, 87, 0.95) !important;
+    padding: 10px 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.nav-link {
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    min-height: 600px;
+    background: linear-gradient(rgba(0, 48, 87, 0.8), rgba(3, 126, 243, 0.6)), 
+                url('https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    position: relative;
+}
+
+.hero-content {
+    margin-top: 80px;
+}
+
+/* Timeline Cards */
+.timeline-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
+}
+
+.timeline-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+}
+
+.icon-box {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 24px;
+}
+
+/* Typography & Animations */
+h1, h2, h3, h4 {
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.text-white, h1.text-white, h2.text-white, h3.text-white {
+    color: #ffffff !important;
+}
+
+/* Simple Entrance Animations */
+.slide-up {
+    animation: slideUp 0.8s ease forwards;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.slide-up-delay {
+    animation: slideUp 0.8s ease 0.2s forwards;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.slide-up-delay-2 {
+    animation: slideUp 0.8s ease 0.4s forwards;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
