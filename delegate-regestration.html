@@ -1,19 +1,112 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Youth Space 6.0 Registration</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting | Youth Space 6.0 Registration</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Fallback Meta Redirect (in case JavaScript is disabled) -->
+    <meta http-equiv="refresh" content="3;url=https://forms.gle/atwPimJ8ywxPMKvJ9" />
 
-    <!-- 2. The WhatsApp Link Preview Data (Open Graph Tags) -->
-    <meta property="og:title" content="Youth Space 6.0 | Delegate Registration" />
-    <meta property="og:description" content="Join the ultimate youth gathering by AIESEC in University of Ruhuna! Unlock your leadership potential, connect with peers, and create lifelong memories." />
-    <!-- IMPORTANT: Replace the URL below with your actual GitHub Pages image link so the banner shows in WhatsApp! -->
-    <!-- <meta property="og:image" content="https://aiesec-in-ruhuna.github.io/AIESEC-Assets/delegate-banner.png" /> -->
-    <meta property="og:type" content="website" />
+    <style>
+        body {
+            /* Matches the light blue background of your email templates */
+            background: linear-gradient(135deg, #e8f4ff 0%, #ffffff 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+        }
+        
+        .redirect-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            border: 1px solid #cce0ff;
+            /* AIESEC Dark Blue top border */
+            border-top: 6px solid #003057; 
+            box-shadow: 0 8px 20px rgba(0, 48, 87, 0.08);
+            padding: 40px 30px;
+            text-align: center;
+            max-width: 450px;
+            width: 90%;
+            animation: fadeIn 0.8s ease-out;
+        }
 
-    <!-- 3. The Redirect (Set to 2 seconds so they have time to see the loading text) -->
-    <meta http-equiv="refresh" content="2; url=https://forms.gle/atwPimJ8ywxPMKvJ9" />
+        .brand-title {
+            color: #003057;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .ys-highlight {
+            color: #037ef3;
+        }
+
+        .spinner-custom {
+            /* AIESEC Light Blue spinner */
+            color: #037ef3; 
+            width: 3rem;
+            height: 3rem;
+            margin: 25px 0;
+        }
+
+        .redirect-text {
+            color: #5a738e;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+
+        .manual-link {
+            color: #037ef3;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .manual-link:hover {
+            color: #003057;
+            text-decoration: underline;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
 <body>
-    <p>If you are not redirected automatically to the registration form, <a href="https://forms.gle/atwPimJ8ywxPMKvJ9">click here</a>.</p>
+
+    <div class="redirect-card">
+        <img src="https://aiesec-in-ruhuna.github.io/YS-6.0/YS LOGO.png" alt="Youth Space Logo" style="max-width: 120px; margin-bottom: 0px;" />
+        <h2 class="brand-title">Youth Space <span class="ys-highlight">6.0</span></h2>
+        <h5 class="text-secondary mb-2">Delegate Registration</h5>
+        
+        <!-- Bootstrap Loading Spinner -->
+        <div class="spinner-border spinner-custom" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        
+        <h5 style="color: #003057; font-weight: 600;">Taking you to the form...</h5>
+        
+        <p class="redirect-text">
+            If you are not redirected automatically in a few seconds, <br>
+            <a href="https://forms.gle/atwPimJ8ywxPMKvJ9" class="manual-link">click here to proceed</a>.
+        </p>
+    </div>
+
+    <!-- JavaScript Auto-Redirect -->
+    <script>
+        setTimeout(function() {
+            window.location.href = "https://forms.gle/atwPimJ8ywxPMKvJ9";
+        }, 6000); // 2500 milliseconds = 2.5 seconds delay before redirecting
+    </script>
+
+    <!-- Bootstrap JS (Optional, but good practice if you add tooltips/modals later) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
