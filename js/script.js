@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
             navbar.classList.remove('scrolled');
         }
     });
-
+    
     // 2. Smooth Scrolling for Navigation Links
     document.querySelectorAll('a.nav-link').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
