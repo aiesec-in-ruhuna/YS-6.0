@@ -7,23 +7,24 @@
 // =============================================
 const CONFIG = {
   // Google Form registration responses sheet (File → Share → Publish to web → CSV)
-  REGISTRATION_SHEET_CSV: 'https://docs.google.com/spreadsheets/d/YOUR_REGISTRATION_SHEET_ID/export?format=csv&gid=0',
+  REGISTRATION_SHEET_CSV: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQclBAK7PY9gNctYhebX_x5nupiVQdn72phhsADJ9Y4vu9WsPLg4NuQb15o_g0jIwpzcZILbtHzXHms/pub?output=csv',
 
   // Ambassador codes sheet (File → Share → Publish to web → CSV)
-  AMBASSADOR_SHEET_CSV: 'https://docs.google.com/spreadsheets/d/YOUR_AMBASSADOR_SHEET_ID/export?format=csv&gid=0',
+  AMBASSADOR_SHEET_CSV: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vS24TzKtykBo54xfUCzP-8IN4uZy49B5X-VWuW_ctTPBOyx_GfGenMStC0K4SeFk5IiUZ263B2ri6T_/pub?gid=1427230571&single=true&output=csv',
 
   // Google Form registration link
-  REGISTRATION_FORM_URL: 'https://forms.gle/YourGoogleFormLinkHere',
+  REGISTRATION_FORM_URL: 'https://aiesec-in-ruhuna.github.io/YS-6.0/delegate-registration.html',
 
   // Column indices (0-based) in the registration CSV:
-  REG_COL_SCHOOL:   3,   // Column D = "School / University"
-  REG_COL_DISTRICT: 4,   // Column E = "District"
-  REG_COL_AMBCODE:  5,   // Column F = "Ambassador Code used"
+  REG_COL_SCHOOL:   10,   // Column D = "School / University"
+  REG_COL_UNIVERSITY:   14,   // Column D = "School / University"
+  REG_COL_DISTRICT: 8,   // Column E = "District"
+  REG_COL_AMBCODE:  2,   // Column F = "Ambassador Code used"
 
   // Column indices in the ambassador CSV:
-  AMB_COL_NAME:  0,   // Column A = Name
+  AMB_COL_NAME:  5,   // Column A = Name
   AMB_COL_EMAIL: 1,   // Column B = Email
-  AMB_COL_CODE:  2,   // Column C = Ambassador Code
+  AMB_COL_CODE:  4,   // Column C = Ambassador Code
 };
 
 // =============================================
@@ -158,6 +159,9 @@ async function loadStats() {
     const schools = new Set(
       registrationData.map(r => (r[CONFIG.REG_COL_SCHOOL] || '').trim().toLowerCase()).filter(Boolean)
     );
+    const universities = new Set(
+      registrationData.map(r => (r[CONFIG.REG_COL_UNIVERSITY] || '').trim().toLowerCase()).filter(Boolean)
+    );
     const districts = new Set(
       registrationData.map(r => (r[CONFIG.REG_COL_DISTRICT] || '').trim().toLowerCase()).filter(Boolean)
     );
@@ -166,7 +170,7 @@ async function loadStats() {
     );
 
     animateCount(el_total, total);
-    animateCount(el_schools, schools.size);
+    animateCount(el_schools, schools.size+universities.size);
     animateCount(el_ambs, ambCodes.size);
     animateCount(el_districts, districts.size);
     if (el_hero) animateCount(el_hero, total);
