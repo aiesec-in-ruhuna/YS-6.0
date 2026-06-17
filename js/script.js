@@ -152,7 +152,7 @@ async function loadStats() {
     const res = await fetch(url, { cache: 'no-store' });
     if (!res.ok) throw new Error('Network error');
     registrationData = await res.json(); // now an array of objects, not parsed CSV rows
-    console.log('Loaded registration data:', Object.keys(registrationData[0]));
+    // console.log('Loaded registration data:', Object.keys(registrationData[0]));
     const total = registrationData.length;
 
     const schools = new Set(
@@ -168,7 +168,7 @@ async function loadStats() {
       registrationData.map(r => (r[CONFIG.REG_COL_AMBCODE] || '').toString().trim()).filter(Boolean)
     );
 
-    console.log('Stats:', { total, schools: schools.size, universities: universities.size, districts: districts.size, ambCodes: ambCodes.size });
+    // console.log('Stats:', { total, schools: schools.size, universities: universities.size, districts: districts.size, ambCodes: ambCodes.size });
 
     animateCount(el_total, total);
     animateCount(el_schools, schools.size + universities.size);
