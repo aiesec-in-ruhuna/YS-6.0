@@ -971,48 +971,80 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
    REGISTER SECTION
    ============================================= */
 
-#amb-register {
-  /* background: var(--light); */
-  margin-bottom: 10px;
-}
-
 .register-section {
   position: relative;
   min-height: 600px;
   display: flex;
   align-items: center;
   overflow: hidden;
+  isolation: isolate;
 }
+
+#amb-register {
+  margin-bottom: 0;
+}
+
 .register-bg {
   position: absolute;
   inset: 0;
+  z-index: 0;
 }
+
 .register-bg-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
+
 .register-overlay {
   position: absolute;
   inset: 0;
+  z-index: 1;
   background: linear-gradient(135deg, rgba(3,50,120,0.95) 0%, rgba(82,86,94,0.9) 100%);
 }
+
+/* ← THIS is the main fix */
+.register-section .container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-left: 24px;
+  padding-right: 24px;        /* ← was likely collapsing to 0 on mobile */
+  box-sizing: border-box;
+}
+
 .register-content {
   position: relative;
   z-index: 2;
   color: var(--white);
-  max-width: 700px;
+  max-width: 100%;            /* ← was 700px, clips on narrow screens */
+  width: 100%;
 }
-.register-content h2 { color: var(--white); font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 16px; }
+
+.register-content h2 {
+  color: var(--white);
+  font-size: clamp(1.6rem, 5vw, 3rem);   /* ← tighter clamp for mobile */
+  margin-bottom: 16px;
+  word-break: break-word;     /* ← prevents long words overflowing */
+}
+
 .text-orange { color: var(--orange); }
-.register-content p { color: rgba(255,255,255,0.8); font-size: 1rem; line-height: 1.7; margin-bottom: 28px; }
+
+.register-content p {
+  color: rgba(255,255,255,0.8);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
 
 .register-meta {
   display: flex;
-  gap: 24px;
+  gap: 16px;
   flex-wrap: wrap;
   margin-bottom: 36px;
 }
+
 .reg-m {
   display: flex;
   align-items: center;
@@ -1020,12 +1052,35 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
   font-size: 0.88rem;
   color: rgba(255,255,255,0.75);
 }
+
 .reg-m i { color: var(--teal); }
 
 .register-note {
   margin-top: 16px;
   font-size: 0.8rem;
   color: rgba(255,255,255,0.5) !important;
+}
+
+/* ← mobile overrides */
+@media (max-width: 480px) {
+  .register-section {
+    min-height: auto;
+    padding: 64px 0;
+  }
+
+  .register-section .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .btn-register {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.95rem;
+    padding: 16px 24px;
+    white-space: normal;      /* ← stops button text from overflowing */
+    text-align: center;
+  }
 }
 
 /* =============================================
