@@ -15,11 +15,13 @@ const CONFIG = {
   // Google Form registration link
   REGISTRATION_FORM_URL: 'https://aiesec-in-ruhuna.github.io/YS-6.0/delegate-registration.html',
 
+  REGISTRATION_APPS_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbzlM6RgQikCJ_cyAi0ByyK5Gt4pB8pWik5K6uKXD0oQ8y4iB-ZGIwOs24cfpM9VY5y0mQ/exec',
+
   // Column indices (0-based) in the registration CSV:
-  REG_COL_SCHOOL:   10,   // Column D = "School / University"
-  REG_COL_UNIVERSITY:   14,   // Column D = "School / University"
-  REG_COL_DISTRICT: 8,   // Column E = "District"
-  REG_COL_AMBCODE:  2,   // Column F = "Ambassador Code used"
+  REG_COL_SCHOOL:   'Your School',   // Column D = "School / University"
+  REG_COL_UNIVERSITY:   'University\nUse short form\ni.e. UOR for University of Ruhuna',   // Column D = "School / University"
+  REG_COL_DISTRICT: 'District',   // Column E = "District"
+  REG_COL_AMBCODE:  'Ambassador Id (if you don\'t know use 0000)',   // Column F = "Ambassador Code used"
 
   // Column indices in the ambassador CSV:
   AMB_COL_NAME:  5,   // Column A = Name
@@ -133,7 +135,6 @@ function parseCSV(text) {
 // LIVE STATS — from registration sheet
 // =============================================
 let registrationData = [];
-
 async function loadStats() {
   const el_total = document.getElementById('totalRegistered');
   const el_schools = document.getElementById('totalSchools');
@@ -142,35 +143,35 @@ async function loadStats() {
   const el_hero = document.getElementById('heroRegistered');
   const el_updated = document.getElementById('lastUpdated');
 
-  // Show loading
   [el_total, el_schools, el_ambs, el_districts, el_hero].forEach(el => {
     if (el) el.textContent = '…';
   });
 
   try {
-    const url = CONFIG.REGISTRATION_SHEET_CSV + '&t=' + Date.now(); // cache-bust
-    const res = await fetch(url);
+    const url = CONFIG.REGISTRATION_APPS_SCRIPT_URL + '?t=' + Date.now();
+    const res = await fetch(url, { cache: 'no-store' });
     if (!res.ok) throw new Error('Network error');
-    const text = await res.text();
-    registrationData = parseCSV(text);
-
+    registrationData = await res.json(); // now an array of objects, not parsed CSV rows
+    console.log('Loaded registration data:', Object.keys(registrationData[0]));
     const total = registrationData.length;
 
     const schools = new Set(
-      registrationData.map(r => (r[CONFIG.REG_COL_SCHOOL] || '').trim().toLowerCase()).filter(Boolean)
+      registrationData.map(r => (r[CONFIG.REG_COL_SCHOOL] || '').toString().trim().toLowerCase()).filter(Boolean)
     );
     const universities = new Set(
-      registrationData.map(r => (r[CONFIG.REG_COL_UNIVERSITY] || '').trim().toLowerCase()).filter(Boolean)
+      registrationData.map(r => (r[CONFIG.REG_COL_UNIVERSITY] || '').toString().trim().toLowerCase()).filter(Boolean)
     );
     const districts = new Set(
-      registrationData.map(r => (r[CONFIG.REG_COL_DISTRICT] || '').trim().toLowerCase()).filter(Boolean)
+      registrationData.map(r => (r[CONFIG.REG_COL_DISTRICT] || '').toString().trim().toLowerCase()).filter(Boolean)
     );
     const ambCodes = new Set(
-      registrationData.map(r => (r[CONFIG.REG_COL_AMBCODE] || '').trim()).filter(Boolean)
+      registrationData.map(r => (r[CONFIG.REG_COL_AMBCODE] || '').toString().trim()).filter(Boolean)
     );
 
+    console.log('Stats:', { total, schools: schools.size, universities: universities.size, districts: districts.size, ambCodes: ambCodes.size });
+
     animateCount(el_total, total);
-    animateCount(el_schools, schools.size+universities.size);
+    animateCount(el_schools, schools.size + universities.size);
     animateCount(el_ambs, ambCodes.size);
     animateCount(el_districts, districts.size);
     if (el_hero) animateCount(el_hero, total);
@@ -188,6 +189,60 @@ async function loadStats() {
     if (el_updated) el_updated.textContent = 'Unable to load';
   }
 }
+// async function loadStats() {
+//   const el_total = document.getElementById('totalRegistered');
+//   const el_schools = document.getElementById('totalSchools');
+//   const el_ambs = document.getElementById('totalAmbassadors');
+//   const el_districts = document.getElementById('totalDistricts');
+//   const el_hero = document.getElementById('heroRegistered');
+//   const el_updated = document.getElementById('lastUpdated');
+
+//   // Show loading
+//   [el_total, el_schools, el_ambs, el_districts, el_hero].forEach(el => {
+//     if (el) el.textContent = '…';
+//   });
+
+//   try {
+//     const url = CONFIG.REGISTRATION_SHEET_CSV + '&t=' + Date.now(); // cache-bust
+//     const res = await fetch(url);
+//     if (!res.ok) throw new Error('Network error');
+//     const text = await res.text();
+//     registrationData = parseCSV(text);
+
+//     const total = registrationData.length;
+
+//     const schools = new Set(
+//       registrationData.map(r => (r[CONFIG.REG_COL_SCHOOL] || '').trim().toLowerCase()).filter(Boolean)
+//     );
+//     const universities = new Set(
+//       registrationData.map(r => (r[CONFIG.REG_COL_UNIVERSITY] || '').trim().toLowerCase()).filter(Boolean)
+//     );
+//     const districts = new Set(
+//       registrationData.map(r => (r[CONFIG.REG_COL_DISTRICT] || '').trim().toLowerCase()).filter(Boolean)
+//     );
+//     const ambCodes = new Set(
+//       registrationData.map(r => (r[CONFIG.REG_COL_AMBCODE] || '').trim()).filter(Boolean)
+//     );
+
+//     animateCount(el_total, total);
+//     animateCount(el_schools, schools.size+universities.size);
+//     animateCount(el_ambs, ambCodes.size);
+//     animateCount(el_districts, districts.size);
+//     if (el_hero) animateCount(el_hero, total);
+
+//     const now = new Date();
+//     if (el_updated) el_updated.textContent = now.toLocaleTimeString('en-LK', { hour: '2-digit', minute: '2-digit' });
+
+//   } catch (err) {
+//     console.warn('Stats load failed:', err);
+//     const fallback = '—';
+//     [el_total, el_schools, el_ambs, el_districts].forEach(el => {
+//       if (el) el.textContent = fallback;
+//     });
+//     if (el_hero) el_hero.textContent = fallback;
+//     if (el_updated) el_updated.textContent = 'Unable to load';
+//   }
+// }
 
 function animateCount(el, target) {
   if (!el) return;
