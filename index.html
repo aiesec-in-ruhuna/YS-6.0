@@ -1,560 +1,708 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Youth Space 6.0 | AIESEC in University of Ruhuna</title>
-  <meta name="description" content="Youth Space 6.0 – Empowering Sri Lankan youth with career insights, leadership skills, and real-world connections."/>
-  <link rel="stylesheet" href="css/styles.css"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Youth Space 6.0 | AIESEC in University of Ruhuna</title>
+    <meta name="description"
+        content="Youth Space 6.0 – Empowering Sri Lankan youth with career insights, leadership skills, and real-world connections." />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
+
 <body>
 
-<!-- ===== NAVBAR ===== -->
-<nav class="navbar" id="navbar">
-  <div class="nav-container">
-    <div class="nav-brand">
-      <img src="assets/logo.png" alt="AIESEC in University of Ruhuna" class="nav-logo" onerror="this.style.display='none'"/>
-      <img src="assets/ys-logo.png" alt="Youth Space 6.0" class="nav-ys-logo" onerror="this.style.display='none'"/>
-      <span class="nav-title">Youth Space <span class="accent">6.0</span></span>
-    </div>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#about">About</a></li>
-      <li><a href="#journey">Journey</a></li>
-      <li><a href="#ambassador">Ambassadors</a></li>
-      <li><a href="#stats">Stats</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#register" class="nav-cta">Register Now</a></li>
-    </ul>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="assets/logo.png" alt="AIESEC in University of Ruhuna" class="nav-logo"
+                    onerror="this.style.display='none'" />
+                <img src="assets/ys-logo.png" alt="Youth Space 6.0" class="nav-ys-logo"
+                    onerror="this.style.display='none'" />
+                <span class="nav-title">Youth Space <span class="accent">6.0</span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#journey">Journey</a></li>
+                <li><a href="#ambassador">Ambassadors</a></li>
+                <li><a href="#stats">Stats</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#register" class="nav-cta">Register Now</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <!-- hero-bg.jpg: A vibrant group photo of youth at AIESEC Youth Space event, outdoor campus setting -->
+            <img src="assets/hero-bg.png" alt="Youth Space Event" class="hero-img"
+                onerror="this.style.display='none'" />
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">AIESEC in University of Ruhuna</div>
+            <h1 class="hero-title">
+                <span class="word-youth">Youth</span>
+                <span class="word-space">Space</span>
+                <span class="word-version">6.0</span>
+            </h1>
+            <p class="hero-tagline">Empowering Youth. Creating Opportunities. Building Leaders.</p>
+            <p class="hero-sub">Sri Lanka's premier youth leadership & career development initiative, bringing together
+                industry experts, universities, and ambitious young people.</p>
+            <div class="hero-actions">
+                <a href="#register" class="btn btn-primary btn-lg">Register as Delegate</a>
+                <a href="#ambassador" class="btn btn-outline btn-lg">Become an Ambassador</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hstat"><span class="hstat-num" id="heroRegistered">—</span><span
+                        class="hstat-label">Registered</span></div>
+                <div class="hstat-div"></div>
+                <div class="hstat"><span class="hstat-num">3</span><span class="hstat-label">Phases</span></div>
+                <div class="hstat-div"></div>
+                <div class="hstat"><span class="hstat-num">22+</span><span class="hstat-label">Universities</span></div>
+            </div>
+        </div>
+        <div class="hero-scroll-hint">
+            <span>Scroll to explore</span>
+            <i class="fa-solid fa-chevron-down bounce"></i>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT AIESEC ===== -->
+    <section class="section about-aiesec" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-visual">
+                    <!-- aiesec-group.jpg: AIESEC members group photo on university campus -->
+                    <img src="assets/aiesec-group.png" alt="AIESEC Members" class="about-img"
+                        onerror="this.style.display='none'; this.parentElement.querySelector('.about-img-placeholder').style.display='flex'" />
+                    <div class="about-img-placeholder">
+                        <i class="fa-solid fa-users"></i>
+                        <span>AIESEC Community</span>
+                    </div>
+                    <div class="about-badge-float">
+                        <span class="badge-num">120+</span>
+                        <span class="badge-label">Countries</span>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <span class="eyebrow">About AIESEC</span>
+                    <h2>The World's Largest <span class="gradient-text">Youth-Led</span> Organization</h2>
+                    <p>We are a global, youth-led organization that strives to achieve Peace and Fulfilment of
+                        Humankind's Potential by engaging and developing every young person in the world with our unique
+                        Leadership Development Model.</p>
+                    <div class="about-pillars">
+                        <div class="pillar"><i class="fa-solid fa-globe" style="color:#037EF3"></i><span>Present in 120+
+                                countries</span></div>
+                        <div class="pillar"><i class="fa-solid fa-star" style="color:#F48924"></i><span>Leadership
+                                development focus</span></div>
+                        <div class="pillar"><i class="fa-solid fa-handshake" style="color:#00c16e"></i><span>Youth
+                                engagement & positive impact</span></div>
+                        <div class="pillar"><i class="fa-solid fa-graduation-cap" style="color:#7552CC"></i><span>22+
+                                universities in Sri Lanka</span></div>
+                    </div>
+                    <div class="sl-stats">
+                        <div class="sl-stat"><span class="sl-num">22+</span><span class="sl-lbl">Universities</span>
+                        </div>
+                        <div class="sl-stat"><span class="sl-num">1800+</span><span class="sl-lbl">Active Members</span>
+                        </div>
+                        <div class="sl-stat"><span class="sl-num">100+</span><span class="sl-lbl">Annual Projects</span>
+                        </div>
+                        <div class="sl-stat"><span class="sl-num">1500+</span><span
+                                class="sl-lbl">Experiences/Year</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WHAT IS YOUTH SPACE ===== -->
+    <section class="section what-ys" id="whatis">
+        <div class="container">
+            <div class="section-header center">
+                <span class="eyebrow">The Initiative</span>
+                <h2>What is <span class="gradient-text">Youth Space 6.0?</span></h2>
+                <p>Organized by AIESEC at the University of Ruhuna, Youth Space is dedicated to empowering students in
+                    their career development journey — raising awareness of diverse opportunities, essential skills, and
+                    strategic approaches.</p>
+            </div>
+            <div class="focus-grid">
+                <div class="focus-card" data-color="blue">
+                    <div class="focus-icon"><i class="fa-solid fa-briefcase"></i></div>
+                    <h3>Career Awareness</h3>
+                    <p>Explore career pathways with guidance from industry experts.</p>
+                </div>
+                <div class="focus-card" data-color="orange">
+                    <div class="focus-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <h3>Leadership Development</h3>
+                    <p>Build leadership qualities that set you apart in the professional world.</p>
+                </div>
+                <div class="focus-card" data-color="green">
+                    <div class="focus-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                    <h3>Entrepreneurship</h3>
+                    <p>Understand the entrepreneurial mindset and how to create impact.</p>
+                </div>
+                <div class="focus-card" data-color="purple">
+                    <div class="focus-icon"><i class="fa-solid fa-robot"></i></div>
+                    <h3>Future Job Market</h3>
+                    <p>Stay ahead by understanding emerging industries and trends.</p>
+                </div>
+                <div class="focus-card" data-color="teal">
+                    <div class="focus-icon"><i class="fa-solid fa-university"></i></div>
+                    <h3>Educational Opportunities</h3>
+                    <p>Discover local and overseas education paths that fit your goals.</p>
+                </div>
+                <div class="focus-card" data-color="red">
+                    <div class="focus-icon"><i class="fa-solid fa-tools"></i></div>
+                    <h3>Skill Development</h3>
+                    <p>Gain practical, employable skills that the industry demands today.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== JOURNEY / PHASES ===== -->
+    <section class="section journey" id="journey">
+        <div class="container">
+            <div class="section-header center">
+                <span class="eyebrow">Event Timeline</span>
+                <h2>The Youth Space <span class="gradient-text">Journey</span></h2>
+                <p>Three carefully designed phases that take you from awareness to action.</p>
+            </div>
+            <div class="phases-container">
+                <div class="phase-card" data-phase="01">
+                    <div class="phase-num">01</div>
+                    <div class="phase-icon"><i class="fa-solid fa-wifi"></i></div>
+                    <!-- phase1-online.png: Students attending virtual session on laptop/zoom -->
+                    <img src="assets/phase-1-online.png" alt="Online Sessions" class="phase-img"
+                        onerror="this.style.display='none'" />
+                    <div class="phase-content">
+                        <h3>Online Awareness Sessions</h3>
+                        <p>A series of virtual sessions designed to equip delegates with career insights, industry
+                            knowledge, and essential professional skills.</p>
+                        <ul class="phase-list">
+                            <li><i class="fa-solid fa-check"></i> Career pathways</li>
+                            <li><i class="fa-solid fa-check"></i> Entrepreneurship</li>
+                            <li><i class="fa-solid fa-check"></i> Overseas education</li>
+                            <li><i class="fa-solid fa-check"></i> Emerging industries</li>
+                        </ul>
+                        <div class="phase-goal"><i class="fa-solid fa-bullseye"></i> Goal: Increase awareness and
+                            exposure</div>
+                    </div>
+                </div>
+
+                <div class="phase-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+
+                <div class="phase-card" data-phase="02">
+                    <div class="phase-num">02</div>
+                    <div class="phase-icon"><i class="fa-solid fa-people-group"></i></div>
+                    <!-- phase2-obt.png: Students doing team outdoor activity/workshop on campus grounds -->
+                    <img src="assets/phase-2-obt.png" alt="OBT Session" class="phase-img"
+                        onerror="this.style.display='none'" />
+                    <div class="phase-content">
+                        <h3>OBT & Skill Development</h3>
+                        <p>An interactive Outcome-Based Training experience focused on leadership development, teamwork,
+                            and personal growth.</p>
+                        <ul class="phase-list">
+                            <li><i class="fa-solid fa-check"></i> CV Writing</li>
+                            <li><i class="fa-solid fa-check"></i> Interview Skills</li>
+                            <li><i class="fa-solid fa-check"></i> LinkedIn Optimization</li>
+                            <li><i class="fa-solid fa-check"></i> Personal Branding</li>
+                        </ul>
+                        <div class="phase-goal"><i class="fa-solid fa-bullseye"></i> Goal: Build practical employability
+                            skills</div>
+                    </div>
+                </div>
+
+                <div class="phase-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+
+                <div class="phase-card" data-phase="03">
+                    <div class="phase-num">03</div>
+                    <div class="phase-icon"><i class="fa-solid fa-store"></i></div>
+                    <!-- phase3-fair.png: Career fair with stalls, students networking with companies and universities -->
+                    <img src="assets/phase-3-careerfair.png" alt="Career Fair" class="phase-img"
+                        onerror="this.style.display='none'" />
+                    <div class="phase-content">
+                        <h3>Educational & Career Fair</h3>
+                        <p>A networking platform connecting delegates with universities, organizations, and industry
+                            professionals to explore opportunities.</p>
+                        <ul class="phase-list">
+                            <li><i class="fa-solid fa-check"></i> Meet industry professionals</li>
+                            <li><i class="fa-solid fa-check"></i> Connect with universities</li>
+                            <li><i class="fa-solid fa-check"></i> Explore internships</li>
+                            <li><i class="fa-solid fa-check"></i> Network with organizations</li>
+                        </ul>
+                        <div class="phase-goal"><i class="fa-solid fa-bullseye"></i> Goal: Connect youth with
+                            opportunities</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== DELEGATE BENEFITS ===== -->
+    <section class="section delegate-benefits" id="delegates">
+        <div class="container">
+            <div class="benefits-grid">
+                <div class="benefits-text">
+                    <span class="eyebrow">For Delegates</span>
+                    <h2>What You <span class="gradient-text">Receive</span></h2>
+                    <div class="benefits-list">
+                        <div class="benefit-item">
+                            <div class="benefit-icon"><i class="fa-solid fa-trophy"></i></div>
+                            <div>
+                                <h4>Leadership Development</h4>
+                                <p>Personal growth through real-world challenges and expert guidance.</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon"><i class="fa-solid fa-certificate"></i></div>
+                            <div>
+                                <h4>Certificates & Scholarships</h4>
+                                <p>Earn recognition for active participation through the program.</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon"><i class="fa-solid fa-compass"></i></div>
+                            <div>
+                                <h4>Career Path Discovery</h4>
+                                <p>Find the right career direction aligned with your skills and passions.</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon"><i class="fa-solid fa-network-wired"></i></div>
+                            <div>
+                                <h4>Professional Network</h4>
+                                <p>Connect with industry leaders, universities and ambitious peers island-wide.</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon"><i class="fa-solid fa-globe"></i></div>
+                            <div>
+                                <h4>AIESEC Global Community</h4>
+                                <p>Engage with a worldwide network spanning 120+ countries.</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon"><i class="fa-solid fa-gamepad"></i></div>
+                            <div>
+                                <h4>Fun & Entertainment</h4>
+                                <p>Carnival games, quizzes, and exciting activities throughout the event.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="awards-panel">
+                    <h3>Awards & Recognition</h3>
+                    <div class="award-card award-gold">
+                        <i class="fa-solid fa-medal"></i>
+                        <div>
+                            <h4>Most Outstanding Delegate</h4>
+                            <p>Recognizing the individual who demonstrates the most valuable contribution throughout the
+                                entire event.</p>
+                        </div>
+                    </div>
+                    <div class="award-card award-silver">
+                        <i class="fa-solid fa-users"></i>
+                        <div>
+                            <h4>Most Engaging Team</h4>
+                            <p>The team that shows the most contribution and engagement across all event phases.</p>
+                        </div>
+                    </div>
+                    <div class="award-card award-quiz">
+                        <i class="fa-solid fa-question-circle"></i>
+                        <div>
+                            <h4>Online & In-Person Quizzes</h4>
+                            <p>Prizes awarded between sessions for quiz winners keeping you sharp and rewarded.</p>
+                        </div>
+                    </div>
+                    <div class="award-card award-games">
+                        <i class="fa-solid fa-flag-checkered"></i>
+                        <div>
+                            <h4>Carnival Games & Fun Activities</h4>
+                            <p>Special prizes at the career fair stalls – because learning should be fun!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== LIVE STATS ===== -->
+    <section class="section live-stats" id="stats">
+        <div class="container">
+            <div class="section-header center">
+                <span class="eyebrow">Live Dashboard</span>
+                <h2>Youth Space <span class="gradient-text">by the Numbers</span></h2>
+                <p class="stats-last-updated">Last updated: <span id="lastUpdated">—</span></p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card stat-blue">
+                    <i class="fa-solid fa-users"></i>
+                    <div class="stat-number" id="totalRegistered">—</div>
+                    <div class="stat-label">Total Registered Delegates</div>
+                </div>
+                <div class="stat-card stat-orange">
+                    <i class="fa-solid fa-university"></i>
+                    <div class="stat-number" id="totalSchools">—</div>
+                    <div class="stat-label">Schools / Universities</div>
+                </div>
+                <div class="stat-card stat-green">
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                    <div class="stat-number" id="totalAmbassadors">—</div>
+                    <div class="stat-label">Active Ambassadors</div>
+                </div>
+                <div class="stat-card stat-purple">
+                    <i class="fa-solid fa-globe"></i>
+                    <div class="stat-number" id="totalDistricts">—</div>
+                    <div class="stat-label">Districts Represented</div>
+                </div>
+            </div>
+            <div class="stats-note">
+                <i class="fa-solid fa-circle-info"></i>
+                Stats update automatically from live registration data.
+                <button class="btn-refresh" onclick="loadStats()"><i class="fa-solid fa-rotate-right"></i>
+                    Refresh</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== AMBASSADOR PROGRAM ===== -->
+    <section class="section ambassador" id="ambassador">
+        <div class="container">
+            <div class="section-header center">
+                <span class="eyebrow">Ambassador Program</span>
+                <h2>Become a <span class="gradient-text">Delegate Ambassador</span></h2>
+                <p>As a Delegate Ambassador, you're not just promoting an event — you're opening doors for your peers
+                    and building your own leadership story.</p>
+            </div>
+
+            <!-- WHY MATTER -->
+            <div class="ambassador-roles">
+                <div class="role-card">
+                    <div class="role-icon" style="background:#037EF3"><i class="fa-solid fa-plug"></i></div>
+                    <h4>A Connector</h4>
+                    <p>Bridge the gap between Youth Space and the youth who need it.</p>
+                </div>
+                <div class="role-card">
+                    <div class="role-icon" style="background:#F48924"><i class="fa-solid fa-star"></i></div>
+                    <h4>A Leader</h4>
+                    <p>Step up, take initiative, and inspire others around you.</p>
+                </div>
+                <div class="role-card">
+                    <div class="role-icon" style="background:#00c16e"><i class="fa-solid fa-bullhorn"></i></div>
+                    <h4>A Promoter</h4>
+                    <p>Spread the word and help young people access real opportunities.</p>
+                </div>
+                <div class="role-card">
+                    <div class="role-icon" style="background:#7552CC"><i class="fa-solid fa-rocket"></i></div>
+                    <h4>A Change-Maker</h4>
+                    <p>Every registration you drive changes someone's future.</p>
+                </div>
+            </div>
+
+            <!-- RESPONSIBILITIES & HOW TO PROMOTE -->
+            <div class="ambassador-details">
+                <div class="amb-panel">
+                    <h3><i class="fa-solid fa-list-check"></i> Ambassador Responsibilities</h3>
+                    <ul class="amb-list">
+                        <li><i class="fa-solid fa-check"></i> Share event information widely</li>
+                        <li><i class="fa-solid fa-check"></i> Promote through social media channels</li>
+                        <li><i class="fa-solid fa-check"></i> Encourage delegate registrations</li>
+                        <li><i class="fa-solid fa-check"></i> Answer basic questions about the event</li>
+                        <li><i class="fa-solid fa-check"></i> Stay connected with coordinators</li>
+                        <li><i class="fa-solid fa-check"></i> Support delegate engagement activities</li>
+                    </ul>
+                    <div class="amb-motto">Consistency &gt; Numbers</div>
+                </div>
+                <div class="amb-panel">
+                    <h3><i class="fa-solid fa-share-nodes"></i> How to Promote Effectively</h3>
+                    <ul class="amb-list">
+                        <li><i class="fa-brands fa-instagram" style="color:#F85A40"></i> Share posts and reels on social
+                            media</li>
+                        <li><i class="fa-solid fa-comments" style="color:#00c16e"></i> Talk to friends and classmates
+                            directly</li>
+                        <li><i class="fa-solid fa-graduation-cap" style="color:#037EF3"></i> Reach school & university
+                            WhatsApp groups</li>
+                        <li><i class="fa-brands fa-whatsapp" style="color:#25D366"></i> Use WhatsApp status updates</li>
+                        <li><i class="fa-solid fa-camera" style="color:#F48924"></i> Share personal recommendations &
+                            stories</li>
+                    </ul>
+                    <div class="amb-rewards">
+                        <h4><i class="fa-solid fa-trophy"></i> Ambassador Rewards</h4>
+                        <p>Most Outstanding Ambassador Award · Certificate of Appreciation · Special Recognition &
+                            Rewards</p>
+                    </div>
+                </div>
+            </div>
+            <!-- AMBASSADOR CODE LOOKUP -->
+            <div class="amb-lookup">
+                <h3><i class="fa-solid fa-magnifying-glass"></i> Ambassador Code Lookup</h3>
+                <p>Search your ambassador code using your name or email address.</p>
+                <div class="lookup-form">
+                    <input type="text" id="lookupQuery" placeholder="Enter your name or email..." class="lookup-input"
+                        autocomplete="off" />
+                    <button class="btn btn-primary" onclick="lookupAmbassador()"><i class="fa-solid fa-search"></i>
+                        Search</button>
+                </div>
+                <div id="lookupResult" class="lookup-result"></div>
+                <div id="lookupLoading" class="lookup-loading" style="display:none"><i
+                        class="fa-solid fa-spinner fa-spin"></i>Searching...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== AMBASSADOR REGISTER ===== -->
+    <section class="section register-section" id="register">
+        <div class="register-bg">
+            <!-- register-bg.jpg: Energetic group of young Sri Lankan students at a university event -->
+            <img src="assets/ambassador-registration.png" alt="Register" class="register-bg-img"
+                onerror="this.style.display='none'" />
+            <div class="register-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="register-content">
+                <span class="eyebrow light">Create An Impact</span>
+                <h2>Register as a <span class="text-orange">Delegate Ambassador</span> Today</h2>
+                <p>Step up as A Connector, A Leader, A Promoter, and A Change-Maker. Help youth across Sri Lanka unlock
+                    their potential because every delegate you bring can change a future.</p>
+                <a href="/ambassador-registration.html" target="_blank" rel="noopener" class="btn btn-register btn-lg">
+                    <i class="fa-solid fa-pen-to-square"></i> Register as Delegate Ambassador
+                </a>
+                <p class="register-note">By registering, you agree to share event information, encourage registrations,
+                    and help us create meaningful impact.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <!-- ===== REGISTER ===== -->
+    <section class="section register-section" id="register">
+        <div class="register-bg">
+            <!-- register-bg.jpg: Energetic group of young Sri Lankan students at a university event -->
+            <img src="assets/register-bg.png" alt="Register" class="register-bg-img"
+                onerror="this.style.display='none'" />
+            <div class="register-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="register-content">
+                <span class="eyebrow light">Join the Movement</span>
+                <h2>Register as a <span class="text-orange">Delegate</span> Today</h2>
+                <p>Don't miss this once-in-a-generation opportunity to transform your career journey. Seats are limited
+                    — register now to secure your spot at Youth Space 6.0.</p>
+                <div class="register-meta">
+                    <div class="reg-m"><i class="fa-solid fa-calendar"></i><span>3 Phases · Online + Physical</span>
+                    </div>
+                    <div class="reg-m"><i class="fa-solid fa-map-marker-alt"></i><span>University of Ruhuna &
+                            Online</span></div>
+                    <div class="reg-m"><i class="fa-solid fa-users"></i><span>Open to all Sri Lankan Youth</span></div>
+                </div>
+                <a href="/delegate-registration.html" target="_blank" rel="noopener" class="btn btn-register btn-lg">
+                    <i class="fa-solid fa-pen-to-square"></i> Register as Delegate
+                </a>
+                <p class="register-note">By registering, you agree to actively participate in all sessions and complete
+                    engagement activities on time.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-header center">
+                <span class="eyebrow">Get in Touch</span>
+                <h2>Meet the <span class="gradient-text">Organizing Team</span></h2>
+                <p>Have questions? Reach out directly to our team. Click on any card to start a WhatsApp conversation.
+                </p>
+            </div>
+            <div class="team-grid">
+
+                <!-- OCP -->
+                <div class="team-card ocp-card"
+                    onclick="openWhatsApp('94701775749', 'Hi Manindu, I have a question about Youth Space 6.0')">
+                    <div class="team-badge">OCP</div>
+                    <!-- contact-manindu.jpg: Professional photo of Manindu Upek -->
+                    <div class="team-photo-wrap">
+                        <img src="assets/contact/manindu.png" alt="Manindu Upek" class="team-photo"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+                        <div class="team-photo-fallback"><i class="fa-solid fa-user"></i> 070 177 5749</div>
+                    </div>
+                    <div class="team-info">
+                        <h4>Manindu Upek</h4>
+                        <span class="team-role">Organizing Committee President</span>
+                        <div class="team-contact"><i class="fa-brands fa-whatsapp"></i></div>
+                    </div>
+                </div>
+
+                <!-- OCVP Delegates -->
+                <div class="team-card"
+                    onclick="openWhatsApp('94753423599', 'Hi Fakiya, I have a question about Youth Space 6.0')">
+                    <div class="team-badge ocvp">OCVP</div>
+                    <!-- contact-fakiya.jpg: Professional photo of Fakiya Jasuly -->
+                    <div class="team-photo-wrap">
+                        <img src="assets/contact/fakiya.png" alt="Fakiya Jasuly" class="team-photo"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+                        <div class="team-photo-fallback"><i class="fa-solid fa-user"></i></div>
+                    </div>
+                    <div class="team-info">
+                        <h4>Fakiya Jasuly</h4>
+                        <span class="team-role">OCVP Delegates</span>
+                        <div class="team-contact"><i class="fa-brands fa-whatsapp"></i> 0753 423 599</div>
+                    </div>
+                </div>
+
+                <div class="team-card"
+                    onclick="openWhatsApp('94779737091', 'Hi Hiranya, I have a question about Youth Space 6.0')">
+                    <div class="team-badge ocvp">OCVP</div>
+                    <!-- contact-hiranya.jpg: Professional photo of Hiranya Amarakoon -->
+                    <div class="team-photo-wrap">
+                        <img src="assets/contact/hiranya.png" alt="Hiranya Amarakoon" class="team-photo"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+                        <div class="team-photo-fallback"><i class="fa-solid fa-user"></i></div>
+                    </div>
+                    <div class="team-info">
+                        <h4>Hiranya Amarakoon</h4>
+                        <span class="team-role">OCVP Delegates</span>
+                        <div class="team-contact"><i class="fa-brands fa-whatsapp"></i> 0779 737 091</div>
+                    </div>
+                </div>
+
+                <div class="team-card"
+                    onclick="openWhatsApp('94716182368', 'Hi Wasana, I have a question about Youth Space 6.0')">
+                    <div class="team-badge ocvp">OCVP</div>
+                    <!-- contact-wasana.jpg: Professional photo of Wasana Chathuperera -->
+                    <div class="team-photo-wrap">
+                        <img src="assets/contact/wasana.png" alt="Wasana Chathuperera" class="team-photo"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+                        <div class="team-photo-fallback"><i class="fa-solid fa-user"></i></div>
+                    </div>
+                    <div class="team-info">
+                        <h4>Wasana Chathuperera</h4>
+                        <span class="team-role">OCVP Delegates</span>
+                        <div class="team-contact"><i class="fa-brands fa-whatsapp"></i> 0716 182 368</div>
+                    </div>
+                </div>
+
+                <div class="team-card"
+                    onclick="openWhatsApp('94707086618', 'Hi Sandali, I have a question about Youth Space 6.0')">
+                    <div class="team-badge ocvp">OCVP</div>
+                    <!-- contact-sandali.jpg: Professional photo of Sandali Divyanjali -->
+                    <div class="team-photo-wrap">
+                        <img src="assets/contact/sandali.png" alt="Sandali Divyanjali" class="team-photo"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+                        <div class="team-photo-fallback"><i class="fa-solid fa-user"></i></div>
+                    </div>
+                    <div class="team-info">
+                        <h4>Sandali Divyanjali</h4>
+                        <span class="team-role">OCVP Delegates</span>
+                        <div class="team-contact"><i class="fa-brands fa-whatsapp"></i> 070 708 6618</div>
+                    </div>
+                </div>
+
+                <div class="team-card"
+                    onclick="openWhatsApp('94769295656', 'Hi Adithya, I have a question about Youth Space 6.0')">
+                    <div class="team-badge ocvp">OCVP</div>
+                    <!-- contact-adithya.jpg: Professional photo of Adithya Wijewickrama -->
+                    <div class="team-photo-wrap">
+                        <img src="assets/contact/adithya.png" alt="Adithya Wijewickrama" class="team-photo"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+                        <div class="team-photo-fallback"><i class="fa-solid fa-user"></i></div>
+                    </div>
+                    <div class="team-info">
+                        <h4>Adithya Wijewickrama</h4>
+                        <span class="team-role">OCVP Delegates</span>
+                        <div class="team-contact"><i class="fa-brands fa-whatsapp"></i> 076 929 5656</div>
+                    </div>
+                </div>
+
+                <div class="team-card"
+                    onclick="openWhatsApp('94722752554', 'Hi Manindu, I have a question about Youth Space 6.0')">
+                    <div class="team-badge ocvp">OCVP</div>
+                    <!-- contact-disari.jpg: Professional photo of Disari Saseka -->
+                    <div class="team-photo-wrap">
+                        <img src="assets/contact/disari.png" alt="Disari Saseka" class="team-photo"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+                        <div class="team-photo-fallback"><i class="fa-solid fa-user"></i></div>
+                    </div>
+                    <div class="team-info">
+                        <h4>Disari Saseka</h4>
+                        <span class="team-role">OCVP Delegates</span>
+                        <div class="team-contact"><i class="fa-brands fa-whatsapp"></i> 0722 752 554</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Social Media -->
+            <div class="social-section">
+                <h3>Follow Youth Space 6.0</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/aiesecin.ruhuna" target="_blank" class="social-link facebook"><i
+                            class="fa-brands fa-facebook-f"></i><span>Facebook</span></a>
+                    <a href="https://www.instagram.com/aiesec_ruhuna" target="_blank" class="social-link instagram"><i
+                            class="fa-brands fa-instagram"></i><span>Instagram</span></a>
+                    <a href="https://www.linkedin.com/company/aiesec-in-university-of-ruhuna" target="_blank"
+                        class="social-link linkedin"><i class="fa-brands fa-linkedin-in"></i><span>LinkedIn</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="assets/ys-logo.png" alt="Youth Space 6.0" class="footer-logo"
+                        onerror="this.style.display='none'" />
+                    <img src="assets/logo.png" alt="AIESEC Ruhuna" class="footer-aiesec-logo"
+                        onerror="this.style.display='none'" />
+                    <p>Empowering Youth. Creating Opportunities. Building Leaders.</p>
+                    <p class="footer-sub">AIESEC in University of Ruhuna</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="#about">About AIESEC</a>
+                    <a href="#journey">Event Journey</a>
+                    <a href="#ambassador">Ambassador Program</a>
+                    <a href="#register">Register Now</a>
+                    <a href="#contact">Contact Us</a>
+                </div>
+                <div class="footer-contact-quick">
+                    <h4>Contact</h4>
+                    <p><i class="fa-brands fa-whatsapp"></i> OCP: 072 275 2554</p>
+                    <p><i class="fa-solid fa-envelope"></i> disari.saseka@aiesec.net</p>
+                    <p><i class="fa-solid fa-map-marker-alt"></i> University of Ruhuna, Matara</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 AIESEC in University of Ruhuna. All rights reserved.</p>
+                <p>Youth Space 6.0 | <a href="https://aiesec.org" target="_blank">aiesec.org</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BACK TO TOP -->
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        <i class="fa-solid fa-arrow-up"></i>
     </button>
-  </div>
-</nav>
 
-<!-- ===== HERO ===== -->
-<section class="hero" id="home">
-  <div class="hero-bg">
-    <!-- hero-bg.jpg: A vibrant group photo of youth at AIESEC Youth Space event, outdoor campus setting -->
-    <img src="assets/hero-bg.png" alt="Youth Space Event" class="hero-img" onerror="this.style.display='none'"/>
-    <div class="hero-overlay"></div>
-  </div>
-  <div class="hero-content">
-    <div class="hero-badge">AIESEC in University of Ruhuna</div>
-    <h1 class="hero-title">
-      <span class="word-youth">Youth</span>
-      <span class="word-space">Space</span>
-      <span class="word-version">6.0</span>
-    </h1>
-    <p class="hero-tagline">Empowering Youth. Creating Opportunities. Building Leaders.</p>
-    <p class="hero-sub">Sri Lanka's premier youth leadership & career development initiative, bringing together industry experts, universities, and ambitious young people.</p>
-    <div class="hero-actions">
-      <a href="#register" class="btn btn-primary btn-lg">Register as Delegate</a>
-      <a href="#ambassador" class="btn btn-outline btn-lg">Become an Ambassador</a>
-    </div>
-    <div class="hero-stats">
-      <div class="hstat"><span class="hstat-num" id="heroRegistered">—</span><span class="hstat-label">Registered</span></div>
-      <div class="hstat-div"></div>
-      <div class="hstat"><span class="hstat-num">3</span><span class="hstat-label">Phases</span></div>
-      <div class="hstat-div"></div>
-      <div class="hstat"><span class="hstat-num">22+</span><span class="hstat-label">Universities</span></div>
-    </div>
-  </div>
-  <div class="hero-scroll-hint">
-    <span>Scroll to explore</span>
-    <i class="fa-solid fa-chevron-down bounce"></i>
-  </div>
-</section>
-
-<!-- ===== ABOUT AIESEC ===== -->
-<section class="section about-aiesec" id="about">
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-visual">
-        <!-- aiesec-group.jpg: AIESEC members group photo on university campus -->
-        <img src="assets/aiesec-group.png" alt="AIESEC Members" class="about-img" onerror="this.style.display='none'; this.parentElement.querySelector('.about-img-placeholder').style.display='flex'"/>
-        <div class="about-img-placeholder">
-          <i class="fa-solid fa-users"></i>
-          <span>AIESEC Community</span>
-        </div>
-        <div class="about-badge-float">
-          <span class="badge-num">120+</span>
-          <span class="badge-label">Countries</span>
-        </div>
-      </div>
-      <div class="about-text">
-        <span class="eyebrow">About AIESEC</span>
-        <h2>The World's Largest <span class="gradient-text">Youth-Led</span> Organization</h2>
-        <p>We are a global, youth-led organization that strives to achieve Peace and Fulfilment of Humankind's Potential by engaging and developing every young person in the world with our unique Leadership Development Model.</p>
-        <div class="about-pillars">
-          <div class="pillar"><i class="fa-solid fa-globe" style="color:#037EF3"></i><span>Present in 120+ countries</span></div>
-          <div class="pillar"><i class="fa-solid fa-star" style="color:#F48924"></i><span>Leadership development focus</span></div>
-          <div class="pillar"><i class="fa-solid fa-handshake" style="color:#00c16e"></i><span>Youth engagement & positive impact</span></div>
-          <div class="pillar"><i class="fa-solid fa-graduation-cap" style="color:#7552CC"></i><span>22+ universities in Sri Lanka</span></div>
-        </div>
-        <div class="sl-stats">
-          <div class="sl-stat"><span class="sl-num">22+</span><span class="sl-lbl">Universities</span></div>
-          <div class="sl-stat"><span class="sl-num">1800+</span><span class="sl-lbl">Active Members</span></div>
-          <div class="sl-stat"><span class="sl-num">100+</span><span class="sl-lbl">Annual Projects</span></div>
-          <div class="sl-stat"><span class="sl-num">1500+</span><span class="sl-lbl">Experiences/Year</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== WHAT IS YOUTH SPACE ===== -->
-<section class="section what-ys" id="whatis">
-  <div class="container">
-    <div class="section-header center">
-      <span class="eyebrow">The Initiative</span>
-      <h2>What is <span class="gradient-text">Youth Space 6.0?</span></h2>
-      <p>Organized by AIESEC at the University of Ruhuna, Youth Space is dedicated to empowering students in their career development journey — raising awareness of diverse opportunities, essential skills, and strategic approaches.</p>
-    </div>
-    <div class="focus-grid">
-      <div class="focus-card" data-color="blue">
-        <div class="focus-icon"><i class="fa-solid fa-briefcase"></i></div>
-        <h3>Career Awareness</h3>
-        <p>Explore career pathways with guidance from industry experts.</p>
-      </div>
-      <div class="focus-card" data-color="orange">
-        <div class="focus-icon"><i class="fa-solid fa-chart-line"></i></div>
-        <h3>Leadership Development</h3>
-        <p>Build leadership qualities that set you apart in the professional world.</p>
-      </div>
-      <div class="focus-card" data-color="green">
-        <div class="focus-icon"><i class="fa-solid fa-lightbulb"></i></div>
-        <h3>Entrepreneurship</h3>
-        <p>Understand the entrepreneurial mindset and how to create impact.</p>
-      </div>
-      <div class="focus-card" data-color="purple">
-        <div class="focus-icon"><i class="fa-solid fa-robot"></i></div>
-        <h3>Future Job Market</h3>
-        <p>Stay ahead by understanding emerging industries and trends.</p>
-      </div>
-      <div class="focus-card" data-color="teal">
-        <div class="focus-icon"><i class="fa-solid fa-university"></i></div>
-        <h3>Educational Opportunities</h3>
-        <p>Discover local and overseas education paths that fit your goals.</p>
-      </div>
-      <div class="focus-card" data-color="red">
-        <div class="focus-icon"><i class="fa-solid fa-tools"></i></div>
-        <h3>Skill Development</h3>
-        <p>Gain practical, employable skills that the industry demands today.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== JOURNEY / PHASES ===== -->
-<section class="section journey" id="journey">
-  <div class="container">
-    <div class="section-header center">
-      <span class="eyebrow">Event Timeline</span>
-      <h2>The Youth Space <span class="gradient-text">Journey</span></h2>
-      <p>Three carefully designed phases that take you from awareness to action.</p>
-    </div>
-    <div class="phases-container">
-      <div class="phase-card" data-phase="01">
-        <div class="phase-num">01</div>
-        <div class="phase-icon"><i class="fa-solid fa-wifi"></i></div>
-        <!-- phase1-online.png: Students attending virtual session on laptop/zoom -->
-        <img src="assets/phase-1-online.png" alt="Online Sessions" class="phase-img" onerror="this.style.display='none'"/>
-        <div class="phase-content">
-          <h3>Online Awareness Sessions</h3>
-          <p>A series of virtual sessions designed to equip delegates with career insights, industry knowledge, and essential professional skills.</p>
-          <ul class="phase-list">
-            <li><i class="fa-solid fa-check"></i> Career pathways</li>
-            <li><i class="fa-solid fa-check"></i> Entrepreneurship</li>
-            <li><i class="fa-solid fa-check"></i> Overseas education</li>
-            <li><i class="fa-solid fa-check"></i> Emerging industries</li>
-          </ul>
-          <div class="phase-goal"><i class="fa-solid fa-bullseye"></i> Goal: Increase awareness and exposure</div>
-        </div>
-      </div>
-
-      <div class="phase-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-
-      <div class="phase-card" data-phase="02">
-        <div class="phase-num">02</div>
-        <div class="phase-icon"><i class="fa-solid fa-people-group"></i></div>
-        <!-- phase2-obt.png: Students doing team outdoor activity/workshop on campus grounds -->
-        <img src="assets/phase-2-obt.png" alt="OBT Session" class="phase-img" onerror="this.style.display='none'"/>
-        <div class="phase-content">
-          <h3>OBT & Skill Development</h3>
-          <p>An interactive Outcome-Based Training experience focused on leadership development, teamwork, and personal growth.</p>
-          <ul class="phase-list">
-            <li><i class="fa-solid fa-check"></i> CV Writing</li>
-            <li><i class="fa-solid fa-check"></i> Interview Skills</li>
-            <li><i class="fa-solid fa-check"></i> LinkedIn Optimization</li>
-            <li><i class="fa-solid fa-check"></i> Personal Branding</li>
-          </ul>
-          <div class="phase-goal"><i class="fa-solid fa-bullseye"></i> Goal: Build practical employability skills</div>
-        </div>
-      </div>
-
-      <div class="phase-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-
-      <div class="phase-card" data-phase="03">
-        <div class="phase-num">03</div>
-        <div class="phase-icon"><i class="fa-solid fa-store"></i></div>
-        <!-- phase3-fair.png: Career fair with stalls, students networking with companies and universities -->
-        <img src="assets/phase-3-careerfair.png" alt="Career Fair" class="phase-img" onerror="this.style.display='none'"/>
-        <div class="phase-content">
-          <h3>Educational & Career Fair</h3>
-          <p>A networking platform connecting delegates with universities, organizations, and industry professionals to explore opportunities.</p>
-          <ul class="phase-list">
-            <li><i class="fa-solid fa-check"></i> Meet industry professionals</li>
-            <li><i class="fa-solid fa-check"></i> Connect with universities</li>
-            <li><i class="fa-solid fa-check"></i> Explore internships</li>
-            <li><i class="fa-solid fa-check"></i> Network with organizations</li>
-          </ul>
-          <div class="phase-goal"><i class="fa-solid fa-bullseye"></i> Goal: Connect youth with opportunities</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== DELEGATE BENEFITS ===== -->
-<section class="section delegate-benefits" id="delegates">
-  <div class="container">
-    <div class="benefits-grid">
-      <div class="benefits-text">
-        <span class="eyebrow">For Delegates</span>
-        <h2>What You <span class="gradient-text">Receive</span></h2>
-        <div class="benefits-list">
-          <div class="benefit-item"><div class="benefit-icon"><i class="fa-solid fa-trophy"></i></div><div><h4>Leadership Development</h4><p>Personal growth through real-world challenges and expert guidance.</p></div></div>
-          <div class="benefit-item"><div class="benefit-icon"><i class="fa-solid fa-certificate"></i></div><div><h4>Certificates & Scholarships</h4><p>Earn recognition for active participation through the program.</p></div></div>
-          <div class="benefit-item"><div class="benefit-icon"><i class="fa-solid fa-compass"></i></div><div><h4>Career Path Discovery</h4><p>Find the right career direction aligned with your skills and passions.</p></div></div>
-          <div class="benefit-item"><div class="benefit-icon"><i class="fa-solid fa-network-wired"></i></div><div><h4>Professional Network</h4><p>Connect with industry leaders, universities and ambitious peers island-wide.</p></div></div>
-          <div class="benefit-item"><div class="benefit-icon"><i class="fa-solid fa-globe"></i></div><div><h4>AIESEC Global Community</h4><p>Engage with a worldwide network spanning 120+ countries.</p></div></div>
-          <div class="benefit-item"><div class="benefit-icon"><i class="fa-solid fa-gamepad"></i></div><div><h4>Fun & Entertainment</h4><p>Carnival games, quizzes, and exciting activities throughout the event.</p></div></div>
-        </div>
-      </div>
-      <div class="awards-panel">
-        <h3>Awards & Recognition</h3>
-        <div class="award-card award-gold">
-          <i class="fa-solid fa-medal"></i>
-          <div>
-            <h4>Most Outstanding Delegate</h4>
-            <p>Recognizing the individual who demonstrates the most valuable contribution throughout the entire event.</p>
-          </div>
-        </div>
-        <div class="award-card award-silver">
-          <i class="fa-solid fa-users"></i>
-          <div>
-            <h4>Most Engaging Team</h4>
-            <p>The team that shows the most contribution and engagement across all event phases.</p>
-          </div>
-        </div>
-        <div class="award-card award-quiz">
-          <i class="fa-solid fa-question-circle"></i>
-          <div>
-            <h4>Online & In-Person Quizzes</h4>
-            <p>Prizes awarded between sessions for quiz winners keeping you sharp and rewarded.</p>
-          </div>
-        </div>
-        <div class="award-card award-games">
-          <i class="fa-solid fa-flag-checkered"></i>
-          <div>
-            <h4>Carnival Games & Fun Activities</h4>
-            <p>Special prizes at the career fair stalls – because learning should be fun!</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== LIVE STATS ===== -->
-<section class="section live-stats" id="stats">
-  <div class="container">
-    <div class="section-header center">
-      <span class="eyebrow">Live Dashboard</span>
-      <h2>Youth Space <span class="gradient-text">by the Numbers</span></h2>
-      <p class="stats-last-updated">Last updated: <span id="lastUpdated">—</span></p>
-    </div>
-    <div class="stats-grid">
-      <div class="stat-card stat-blue">
-        <i class="fa-solid fa-users"></i>
-        <div class="stat-number" id="totalRegistered">—</div>
-        <div class="stat-label">Total Registered Delegates</div>
-      </div>
-      <div class="stat-card stat-orange">
-        <i class="fa-solid fa-university"></i>
-        <div class="stat-number" id="totalSchools">—</div>
-        <div class="stat-label">Schools / Universities</div>
-      </div>
-      <div class="stat-card stat-green">
-        <i class="fa-solid fa-star-half-stroke"></i>
-        <div class="stat-number" id="totalAmbassadors">—</div>
-        <div class="stat-label">Active Ambassadors</div>
-      </div>
-      <div class="stat-card stat-purple">
-        <i class="fa-solid fa-globe"></i>
-        <div class="stat-number" id="totalDistricts">—</div>
-        <div class="stat-label">Districts Represented</div>
-      </div>
-    </div>
-    <div class="stats-note">
-      <i class="fa-solid fa-circle-info"></i>
-      Stats update automatically from live registration data. 
-      <button class="btn-refresh" onclick="loadStats()"><i class="fa-solid fa-rotate-right"></i> Refresh</button>
-    </div>
-  </div>
-</section>
-
-<!-- ===== AMBASSADOR PROGRAM ===== -->
-<section class="section ambassador" id="ambassador">
-  <div class="container">
-    <div class="section-header center">
-      <span class="eyebrow">Ambassador Program</span>
-      <h2>Become a <span class="gradient-text">Delegate Ambassador</span></h2>
-      <p>As a Delegate Ambassador, you're not just promoting an event — you're opening doors for your peers and building your own leadership story.</p>
-    </div>
-
-    <!-- WHY MATTER -->
-    <div class="ambassador-roles">
-      <div class="role-card"><div class="role-icon" style="background:#037EF3"><i class="fa-solid fa-plug"></i></div><h4>A Connector</h4><p>Bridge the gap between Youth Space and the youth who need it.</p></div>
-      <div class="role-card"><div class="role-icon" style="background:#F48924"><i class="fa-solid fa-star"></i></div><h4>A Leader</h4><p>Step up, take initiative, and inspire others around you.</p></div>
-      <div class="role-card"><div class="role-icon" style="background:#00c16e"><i class="fa-solid fa-bullhorn"></i></div><h4>A Promoter</h4><p>Spread the word and help young people access real opportunities.</p></div>
-      <div class="role-card"><div class="role-icon" style="background:#7552CC"><i class="fa-solid fa-rocket"></i></div><h4>A Change-Maker</h4><p>Every registration you drive changes someone's future.</p></div>
-    </div>
-
-    <!-- RESPONSIBILITIES & HOW TO PROMOTE -->
-    <div class="ambassador-details">
-      <div class="amb-panel">
-        <h3><i class="fa-solid fa-list-check"></i> Ambassador Responsibilities</h3>
-        <ul class="amb-list">
-          <li><i class="fa-solid fa-check"></i> Share event information widely</li>
-          <li><i class="fa-solid fa-check"></i> Promote through social media channels</li>
-          <li><i class="fa-solid fa-check"></i> Encourage delegate registrations</li>
-          <li><i class="fa-solid fa-check"></i> Answer basic questions about the event</li>
-          <li><i class="fa-solid fa-check"></i> Stay connected with coordinators</li>
-          <li><i class="fa-solid fa-check"></i> Support delegate engagement activities</li>
-        </ul>
-        <div class="amb-motto">Consistency &gt; Numbers</div>
-      </div>
-      <div class="amb-panel">
-        <h3><i class="fa-solid fa-share-nodes"></i> How to Promote Effectively</h3>
-        <ul class="amb-list">
-          <li><i class="fa-brands fa-instagram" style="color:#F85A40"></i> Share posts and reels on social media</li>
-          <li><i class="fa-solid fa-comments" style="color:#00c16e"></i> Talk to friends and classmates directly</li>
-          <li><i class="fa-solid fa-graduation-cap" style="color:#037EF3"></i> Reach school & university WhatsApp groups</li>
-          <li><i class="fa-brands fa-whatsapp" style="color:#25D366"></i> Use WhatsApp status updates</li>
-          <li><i class="fa-solid fa-camera" style="color:#F48924"></i> Share personal recommendations & stories</li>
-        </ul>
-        <div class="amb-rewards">
-          <h4><i class="fa-solid fa-trophy"></i> Ambassador Rewards</h4>
-          <p>Most Outstanding Ambassador Award · Certificate of Appreciation · Special Recognition & Rewards</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- AMBASSADOR CODE LOOKUP -->
-    <div class="amb-lookup">
-      <h3><i class="fa-solid fa-magnifying-glass"></i> Ambassador Code Lookup</h3>
-      <p>Search your ambassador code using your name or email address.</p>
-      <div class="lookup-form">
-        <input type="text" id="lookupQuery" placeholder="Enter your name or email..." class="lookup-input" autocomplete="off"/>
-        <button class="btn btn-primary" onclick="lookupAmbassador()"><i class="fa-solid fa-search"></i> Search</button>
-      </div>
-      <div id="lookupResult" class="lookup-result"></div>
-      <div id="lookupLoading" class="lookup-loading" style="display:none"><i class="fa-solid fa-spinner fa-spin"></i> Searching...</div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== REGISTER ===== -->
-<section class="section register-section" id="register">
-  <div class="register-bg">
-    <!-- register-bg.jpg: Energetic group of young Sri Lankan students at a university event -->
-    <img src="assets/register-bg.png" alt="Register" class="register-bg-img" onerror="this.style.display='none'"/>
-    <div class="register-overlay"></div>
-  </div>
-  <div class="container">
-    <div class="register-content">
-      <span class="eyebrow light">Join the Movement</span>
-      <h2>Register as a <span class="text-orange">Delegate</span> Today</h2>
-      <p>Don't miss this once-in-a-generation opportunity to transform your career journey. Seats are limited — register now to secure your spot at Youth Space 6.0.</p>
-      <div class="register-meta">
-        <div class="reg-m"><i class="fa-solid fa-calendar"></i><span>3 Phases · Online + Physical</span></div>
-        <div class="reg-m"><i class="fa-solid fa-map-marker-alt"></i><span>University of Ruhuna & Online</span></div>
-        <div class="reg-m"><i class="fa-solid fa-users"></i><span>Open to all Sri Lankan Youth</span></div>
-      </div>
-      <a href="/delegate-registration.html" target="_blank" rel="noopener" class="btn btn-register btn-lg">
-        <i class="fa-solid fa-pen-to-square"></i> Register as Delegate
-      </a>
-      <p class="register-note">By registering, you agree to actively participate in all sessions and complete engagement activities on time.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ===== CONTACT ===== -->
-<section class="section contact" id="contact">
-  <div class="container">
-    <div class="section-header center">
-      <span class="eyebrow">Get in Touch</span>
-      <h2>Meet the <span class="gradient-text">Organizing Team</span></h2>
-      <p>Have questions? Reach out directly to our team. Click on any card to start a WhatsApp conversation.</p>
-    </div>
-    <div class="team-grid">
-
-      <!-- OCP -->
-      <div class="team-card ocp-card" onclick="openWhatsApp('94701775749', 'Hi Manindu, I have a question about Youth Space 6.0')">
-        <div class="team-badge">OCP</div>
-        <!-- contact-manindu.jpg: Professional photo of Manindu Upek -->
-        <div class="team-photo-wrap">
-          <img src="assets/contact/manindu.png" alt="Manindu Upek" class="team-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
-          <div class="team-photo-fallback"><i class="fa-solid fa-user"></i> 070 177 5749</div>
-        </div>
-        <div class="team-info">
-          <h4>Manindu Upek</h4>
-          <span class="team-role">Organizing Committee President</span>
-          <div class="team-contact"><i class="fa-brands fa-whatsapp"></i></div>
-        </div>
-      </div>
-
-      <!-- OCVP Delegates -->
-      <div class="team-card" onclick="openWhatsApp('94753423599', 'Hi Fakiya, I have a question about Youth Space 6.0')">
-        <div class="team-badge ocvp">OCVP</div>
-        <!-- contact-fakiya.jpg: Professional photo of Fakiya Jasuly -->
-        <div class="team-photo-wrap">
-          <img src="assets/contact/fakiya.png" alt="Fakiya Jasuly" class="team-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
-          <div class="team-photo-fallback"><i class="fa-solid fa-user"></i></div>
-        </div>
-        <div class="team-info">
-          <h4>Fakiya Jasuly</h4>
-          <span class="team-role">OCVP Delegates</span>
-          <div class="team-contact"><i class="fa-brands fa-whatsapp"></i> 0753 423 599</div>
-        </div>
-      </div>
-
-      <div class="team-card" onclick="openWhatsApp('94779737091', 'Hi Hiranya, I have a question about Youth Space 6.0')">
-        <div class="team-badge ocvp">OCVP</div>
-        <!-- contact-hiranya.jpg: Professional photo of Hiranya Amarakoon -->
-        <div class="team-photo-wrap">
-          <img src="assets/contact/hiranya.png" alt="Hiranya Amarakoon" class="team-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
-          <div class="team-photo-fallback"><i class="fa-solid fa-user"></i></div>
-        </div>
-        <div class="team-info">
-          <h4>Hiranya Amarakoon</h4>
-          <span class="team-role">OCVP Delegates</span>
-          <div class="team-contact"><i class="fa-brands fa-whatsapp"></i> 0779 737 091</div>
-        </div>
-      </div>
-
-      <div class="team-card" onclick="openWhatsApp('94716182368', 'Hi Wasana, I have a question about Youth Space 6.0')">
-        <div class="team-badge ocvp">OCVP</div>
-        <!-- contact-wasana.jpg: Professional photo of Wasana Chathuperera -->
-        <div class="team-photo-wrap">
-          <img src="assets/contact/wasana.png" alt="Wasana Chathuperera" class="team-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
-          <div class="team-photo-fallback"><i class="fa-solid fa-user"></i></div>
-        </div>
-        <div class="team-info">
-          <h4>Wasana Chathuperera</h4>
-          <span class="team-role">OCVP Delegates</span>
-          <div class="team-contact"><i class="fa-brands fa-whatsapp"></i> 0716 182 368</div>
-        </div>
-      </div>
-
-      <div class="team-card" onclick="openWhatsApp('94707086618', 'Hi Sandali, I have a question about Youth Space 6.0')">
-        <div class="team-badge ocvp">OCVP</div>
-        <!-- contact-sandali.jpg: Professional photo of Sandali Divyanjali -->
-        <div class="team-photo-wrap">
-          <img src="assets/contact/sandali.png" alt="Sandali Divyanjali" class="team-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
-          <div class="team-photo-fallback"><i class="fa-solid fa-user"></i></div>
-        </div>
-        <div class="team-info">
-          <h4>Sandali Divyanjali</h4>
-          <span class="team-role">OCVP Delegates</span>
-          <div class="team-contact"><i class="fa-brands fa-whatsapp"></i> 070 708 6618</div>
-        </div>
-      </div>
-
-      <div class="team-card" onclick="openWhatsApp('94769295656', 'Hi Adithya, I have a question about Youth Space 6.0')">
-        <div class="team-badge ocvp">OCVP</div>
-        <!-- contact-adithya.jpg: Professional photo of Adithya Wijewickrama -->
-        <div class="team-photo-wrap">
-          <img src="assets/contact/adithya.png" alt="Adithya Wijewickrama" class="team-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
-          <div class="team-photo-fallback"><i class="fa-solid fa-user"></i></div>
-        </div>
-        <div class="team-info">
-          <h4>Adithya Wijewickrama</h4>
-          <span class="team-role">OCVP Delegates</span>
-          <div class="team-contact"><i class="fa-brands fa-whatsapp"></i> 076 929 5656</div>
-        </div>
-      </div>
-
-      <div class="team-card" onclick="openWhatsApp('94722752554', 'Hi Manindu, I have a question about Youth Space 6.0')">
-        <div class="team-badge ocvp">OCVP</div>
-        <!-- contact-disari.jpg: Professional photo of Disari Saseka -->
-        <div class="team-photo-wrap">
-          <img src="assets/contact/disari.png" alt="Disari Saseka" class="team-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
-          <div class="team-photo-fallback"><i class="fa-solid fa-user"></i></div>
-        </div>
-        <div class="team-info">
-          <h4>Disari Saseka</h4>
-          <span class="team-role">OCVP Delegates</span>
-          <div class="team-contact"><i class="fa-brands fa-whatsapp"></i> 0722 752 554</div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Social Media -->
-    <div class="social-section">
-      <h3>Follow Youth Space 6.0</h3>
-      <div class="social-links">
-        <a href="https://www.facebook.com/aiesecin.ruhuna" target="_blank" class="social-link facebook"><i class="fa-brands fa-facebook-f"></i><span>Facebook</span></a>
-        <a href="https://www.instagram.com/aiesec_ruhuna" target="_blank" class="social-link instagram"><i class="fa-brands fa-instagram"></i><span>Instagram</span></a>
-        <a href="https://www.linkedin.com/company/aiesec-in-university-of-ruhuna" target="_blank" class="social-link linkedin"><i class="fa-brands fa-linkedin-in"></i><span>LinkedIn</span></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== FOOTER ===== -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <img src="assets/ys-logo.png" alt="Youth Space 6.0" class="footer-logo" onerror="this.style.display='none'"/>
-        <img src="assets/logo.png" alt="AIESEC Ruhuna" class="footer-aiesec-logo" onerror="this.style.display='none'"/>
-        <p>Empowering Youth. Creating Opportunities. Building Leaders.</p>
-        <p class="footer-sub">AIESEC in University of Ruhuna</p>
-      </div>
-      <div class="footer-links">
-        <h4>Quick Links</h4>
-        <a href="#about">About AIESEC</a>
-        <a href="#journey">Event Journey</a>
-        <a href="#ambassador">Ambassador Program</a>
-        <a href="#register">Register Now</a>
-        <a href="#contact">Contact Us</a>
-      </div>
-      <div class="footer-contact-quick">
-        <h4>Contact</h4>
-        <p><i class="fa-brands fa-whatsapp"></i> OCP: 072 275 2554</p>
-        <p><i class="fa-solid fa-envelope"></i> disari.saseka@aiesec.net</p>
-        <p><i class="fa-solid fa-map-marker-alt"></i> University of Ruhuna, Matara</p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2025 AIESEC in University of Ruhuna. All rights reserved.</p>
-      <p>Youth Space 6.0 | <a href="https://aiesec.org" target="_blank">aiesec.org</a></p>
-    </div>
-  </div>
-</footer>
-
-<!-- BACK TO TOP -->
-<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
-  <i class="fa-solid fa-arrow-up"></i>
-</button>
-
-<script src="js/script.js"></script>
+    <script src="js/script.js"></script>
 </body>
+
 </html>
