@@ -970,6 +970,12 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 /* =============================================
    REGISTER SECTION
    ============================================= */
+
+#amb-register {
+  /* background: var(--light); */
+  margin-bottom: 10px;
+}
+
 .register-section {
   position: relative;
   min-height: 600px;
