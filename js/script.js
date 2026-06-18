@@ -18,23 +18,24 @@ const CONFIG = {
   REGISTRATION_APPS_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbzlM6RgQikCJ_cyAi0ByyK5Gt4pB8pWik5K6uKXD0oQ8y4iB-ZGIwOs24cfpM9VY5y0mQ/exec',
 
   // Column indices (0-based) in the registration CSV:
-  REG_COL_SCHOOL:   'Your School',   // Column D = "School / University"
-  REG_COL_UNIVERSITY:   'University\nUse short form\ni.e. UOR for University of Ruhuna',   // Column D = "School / University"
+  REG_COL_SCHOOL: 'Your School',   // Column D = "School / University"
+  REG_COL_UNIVERSITY: 'University\nUse short form\ni.e. UOR for University of Ruhuna',   // Column D = "School / University"
   REG_COL_DISTRICT: 'District',   // Column E = "District"
-  REG_COL_AMBCODE:  'Ambassador Id (if you don\'t know use 0000)',   // Column F = "Ambassador Code used"
+  REG_COL_AMBCODE: 'Ambassador Id (if you don\'t know use 0000)',   // Column F = "Ambassador Code used"
 
   // Column indices in the ambassador CSV:
-  AMB_COL_NAME:  5,   // Column A = Name
+  AMB_COL_NAME: 5,   // Column A = Name
   AMB_COL_EMAIL: 1,   // Column B = Email
-  AMB_COL_CODE:  4,   // Column C = Ambassador Code
+  AMB_COL_CODE: 4,   // Column C = Ambassador Code
+  AMB_COL_UNIVERSITY: 6,   // Column D = University/School
 };
 
 // =============================================
 // NAVBAR — scroll effect + mobile toggle
 // =============================================
-const navbar  = document.getElementById('navbar');
+const navbar = document.getElementById('navbar');
 const hamburger = document.getElementById('hamburger');
-const navLinks  = document.getElementById('navLinks');
+const navLinks = document.getElementById('navLinks');
 
 window.addEventListener('scroll', () => {
   if (window.scrollY > 60) {
@@ -168,6 +169,63 @@ async function loadStats() {
       registrationData.map(r => (r[CONFIG.REG_COL_AMBCODE] || '').toString().trim()).filter(Boolean)
     );
 
+    let ambStats = {}; // default code for unknown ambassadors
+    registrationData.forEach(r => {
+      const code = (r[CONFIG.REG_COL_AMBCODE] || '').toString().trim();
+      // console.log('Processing ambassador code:', code);
+      // console.log(Object.keys(ambStats).indexOf(code));
+      if (code !== '0000') {
+        if (Object.keys(ambStats).indexOf(code) === -1) {
+          ambStats[code] = { count: 1 };
+        }
+        ambStats[code].count = (ambStats[code]['count'] || 0) + 1;
+      } // skip unknown ambassadors
+    });
+
+    //sort amdbassador stats by count descending
+    const sortedAmbStats = Object.fromEntries(
+      Object.entries(ambStats).sort(([, a], [, b]) => b.count - a.count)
+    );
+
+    ambStats = sortedAmbStats;
+    await loadAmbassadorData();
+    // Update the ambassador table with the latest stats id=ambassadorTableBody
+    const tableBody = document.getElementById('ambassadorTableBody');
+    if (tableBody) {
+      tableBody.innerHTML = '';
+      Object.keys(ambStats).forEach(code => {
+        const count = ambStats[code].count;
+        const amb = ambassadorData.find(a => (a[CONFIG.AMB_COL_CODE] || '').toString().trim() === code);
+        const name = amb ? amb[CONFIG.AMB_COL_NAME] : 'Unknown';
+        const email = amb ? amb[CONFIG.AMB_COL_EMAIL] : 'Unknown';
+        //get the unievrsity/school of the ambassador
+
+        const university = amb ? amb[CONFIG.AMB_COL_UNIVERSITY] : 'Unknown';
+        const row = document.createElement('tr');
+        row.innerHTML = `
+    <td data-label="Code">${escapeHtml(code)}</td>
+    <td data-label="Name">${escapeHtml(name)}</td>
+    <td data-label="University/School">${escapeHtml(university)}</td>
+    <td data-label="Delegate Registrations">${count}</td>
+`;
+tableBody.appendChild(row);
+        // Example of how you are likely building your table rows in JS:
+        // let newRow = document.createElement('tr');
+
+        // // Notice the added data-label attribute inside each <td>!
+        // newRow.innerHTML = `
+        // <td data-label="Code">${ambassadorCode}</td>
+        // <td data-label="Name">${ambassadorName}</td>
+        // <td data-label="University">${universityName}</td>
+        // <td data-label="Registrations">${registrationCount}</td>
+        // `;
+
+        // tableBody.appendChild(newRow);
+      });
+      applyTableLogic(); // re-apply search and pagination logic after updating the table
+    }
+
+
     // console.log('Stats:', { total, schools: schools.size, universities: universities.size, districts: districts.size, ambCodes: ambCodes.size });
 
     animateCount(el_total, total);
@@ -189,6 +247,8 @@ async function loadStats() {
     if (el_updated) el_updated.textContent = 'Unable to load';
   }
 }
+
+
 // async function loadStats() {
 //   const el_total = document.getElementById('totalRegistered');
 //   const el_schools = document.getElementById('totalSchools');
@@ -244,6 +304,72 @@ async function loadStats() {
 //   }
 // }
 
+function applyTableLogic() {
+  const searchInput = document.getElementById('ambassadorSearch');
+  const tableBody = document.getElementById('ambassadorTableBody');
+  const showMoreBtn = document.getElementById('showMoreBtn');
+
+  // Get all the rows currently in the table
+  const rows = Array.from(tableBody.querySelectorAll('tr'));
+
+  let isShowingAll = false;
+  const INITIAL_LIMIT = 5;
+
+  // This function decides which rows to show or hide
+  function updateDisplay() {
+    const searchTerm = searchInput.value.toLowerCase().trim();
+    let matchCount = 0;
+
+    rows.forEach(row => {
+      // Check if the row text contains the search term
+      const textContent = row.textContent.toLowerCase();
+      const matchesSearch = textContent.includes(searchTerm);
+
+      if (matchesSearch) {
+        matchCount++;
+
+        // If user is actively searching, show all matches. 
+        // If not searching, enforce the 5-row limit (unless 'Show More' is clicked).
+        if (searchTerm !== "") {
+          row.classList.remove('hidden-row');
+        } else {
+          if (isShowingAll || matchCount <= INITIAL_LIMIT) {
+            row.classList.remove('hidden-row');
+          } else {
+            row.classList.add('hidden-row');
+          }
+        }
+      } else {
+        row.classList.add('hidden-row'); // Hide rows that don't match the search
+      }
+    });
+
+    // Update the Button
+    if (searchTerm !== "") {
+      // Hide the button completely when searching
+      showMoreBtn.style.display = 'none';
+    } else if (rows.length > INITIAL_LIMIT) {
+      // Show the button if there are more than 5 total rows
+      showMoreBtn.style.display = 'inline-block';
+      showMoreBtn.innerText = isShowingAll ? "Show Less" : "Show More";
+    } else {
+      showMoreBtn.style.display = 'none';
+    }
+  }
+
+  // 1. Listen for typing in the search bar
+  searchInput.addEventListener('input', updateDisplay);
+
+  // 2. Listen for clicks on the Show More button
+  showMoreBtn.addEventListener('click', () => {
+    isShowingAll = !isShowingAll; // Toggle the state
+    updateDisplay();              // Re-run the display logic
+  });
+
+  // 3. Run it once immediately to hide rows 6+ on page load
+  updateDisplay();
+}
+
 function animateCount(el, target) {
   if (!el) return;
   const duration = 1200;
@@ -298,15 +424,15 @@ async function lookupAmbassador() {
   }
 
   const match = ambassadorData.find(row => {
-    const name  = (row[CONFIG.AMB_COL_NAME]  || '').toLowerCase();
+    const name = (row[CONFIG.AMB_COL_NAME] || '').toLowerCase();
     const email = (row[CONFIG.AMB_COL_EMAIL] || '').toLowerCase();
     return name.includes(query) || email.includes(query);
   });
 
   if (match) {
-    const name  = match[CONFIG.AMB_COL_NAME]  || '';
+    const name = match[CONFIG.AMB_COL_NAME] || '';
     const email = match[CONFIG.AMB_COL_EMAIL] || '';
-    const code  = match[CONFIG.AMB_COL_CODE]  || '—';
+    const code = match[CONFIG.AMB_COL_CODE] || '—';
     resultEl.innerHTML = `
       <div class="lookup-card">
         <div class="lc-name">👋 ${escapeHtml(name)}</div>
@@ -322,13 +448,17 @@ async function lookupAmbassador() {
   }
 }
 
+function updateAmbassadorTable() {
+
+}
+
 // Allow Enter key in lookup input
 document.getElementById('lookupQuery').addEventListener('keydown', e => {
   if (e.key === 'Enter') lookupAmbassador();
 });
 
 function escapeHtml(str) {
-  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
 // =============================================

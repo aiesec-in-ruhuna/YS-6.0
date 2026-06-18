@@ -8,7 +8,7 @@
     <meta name="description"
         content="Youth Space 6.0 – Empowering Sri Lankan youth with career insights, leadership skills, and real-world connections." />
     <link rel="icon" type="image/png" href="Assets/YS-LOGO.png">
-        <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -462,6 +462,33 @@
                 <div id="lookupLoading" class="lookup-loading" style="display:none"><i
                         class="fa-solid fa-spinner fa-spin"></i>Searching...</div>
             </div>
+            <!--create ambassador stats table with ambassador code name email and university or school-->
+            <div class="ambassador-stats">
+                <div class="stats-header">
+                    <h3><i class="fa-solid fa-chart-bar"></i> Ambassador Stats</h3>
+                    <div class="search-container">
+                        <input type="text" id="ambassadorSearch" placeholder="Search Code, Name, or Uni..." oninput="applyTableLogic()">
+                    </div>
+                </div>
+
+                <table class="table" id="ambassadorTable">
+                    <thead>
+                        <tr>
+                            <th>Code</th>
+                            <th>Name</th>
+                            <th>University/School</th>
+                            <th>Delegate Registrations</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ambassadorTableBody">
+                    </tbody>
+                </table>
+
+                <div style="text-align: center; margin-top: 25px;">
+                    <button id="showMoreBtn" class="nav-cta"
+                        style="display: none; border: none; border-radius: 10%; padding: 10px 25px; font-size: 1rem;">Show More</button>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -479,7 +506,8 @@
                 <h2>Register as a <span class="text-orange">Delegate Ambassador</span> Today</h2>
                 <p>Step up as A Connector, A Leader, A Promoter, and A Change-Maker. Help youth across Sri Lanka unlock
                     their potential because every delegate you bring can change a future.</p>
-                <a href="/YS-6.0/ambassador-registration.html" target="_blank" rel="noopener" class="btn btn-register btn-lg">
+                <a href="/YS-6.0/ambassador-registration.html" target="_blank" rel="noopener"
+                    class="btn btn-register btn-lg">
                     <i class="fa-solid fa-pen-to-square"></i> Register as Delegate Ambassador
                 </a>
                 <p class="register-note">By registering, you agree to share event information, encourage registrations,
@@ -509,7 +537,8 @@
                             Online</span></div>
                     <div class="reg-m"><i class="fa-solid fa-users"></i><span>Open to all Sri Lankan Youth</span></div>
                 </div>
-                <a href="/YS-6.0/delegate-registration.html" target="_blank" rel="noopener" class="btn btn-register btn-lg">
+                <a href="/YS-6.0/delegate-registration.html" target="_blank" rel="noopener"
+                    class="btn btn-register btn-lg">
                     <i class="fa-solid fa-pen-to-square"></i> Register as Delegate
                 </a>
                 <p class="register-note">By registering, you agree to actively participate in all sessions and complete
