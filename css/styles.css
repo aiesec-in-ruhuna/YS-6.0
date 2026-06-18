@@ -976,10 +976,9 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-    margin: 40px auto;
-    max-width: 1000px;
-    /* Crucial for mobile: Allows the table to scroll sideways if it gets too wide */
-    overflow-x: auto; 
+    margin: 40px;
+    justify-content: center;
+    /* max-width: 1000px; */
 }
 
 .ambassador-stats h3 {
@@ -1030,7 +1029,7 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 .ambassador-stats .table td {
     padding: 16px 20px;
     border-bottom: 1px solid #3d1d1d;
-    color: var(--dark-grey);
+    color: var(--dark);
     font-size: 0.95rem;
     vertical-align: middle;
 }
@@ -1536,7 +1535,7 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
    MOBILE TABLE "CARD" LAYOUT FIX
    ============================================= */
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     /* Remove the horizontal scrollbar */
     .ambassador-stats {
         overflow-x: hidden;
