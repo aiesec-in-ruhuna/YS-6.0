@@ -341,41 +341,33 @@
         </div>
     </section>
 
-    <!-- ===== LIVE STATS ===== -->
-    <section class="section live-stats" id="stats">
+    <!-- ===== DELEGATE REGISTER ===== -->
+    <section class="section register-section" id="register">
+        <div class="register-bg">
+            <!-- register-bg.jpg: Energetic group of young Sri Lankan students at a university event -->
+            <img src="Assets/register-bg.png" alt="Register" class="register-bg-img"
+                onerror="this.style.display='none'" />
+            <div class="register-overlay"></div>
+        </div>
         <div class="container">
-            <div class="section-header center">
-                <span class="eyebrow">Live Dashboard</span>
-                <h2>Youth Space <span class="gradient-text">by the Numbers</span></h2>
-                <p class="stats-last-updated">Last updated: <span id="lastUpdated">—</span></p>
-            </div>
-            <div class="stats-grid">
-                <div class="stat-card stat-blue">
-                    <i class="fa-solid fa-users"></i>
-                    <div class="stat-number" id="totalRegistered">—</div>
-                    <div class="stat-label">Total Registered Delegates</div>
+            <div class="register-content">
+                <span class="eyebrow light">Join the Movement</span>
+                <h2>Register as a <span class="text-orange">Delegate</span> Today</h2>
+                <p>Don't miss this once-in-a-generation opportunity to transform your career journey. Seats are limited
+                    — register now to secure your spot at Youth Space 6.0.</p>
+                <div class="register-meta">
+                    <div class="reg-m"><i class="fa-solid fa-calendar"></i><span>3 Phases · Online + Physical</span>
+                    </div>
+                    <div class="reg-m"><i class="fa-solid fa-map-marker-alt"></i><span>University of Ruhuna &
+                            Online</span></div>
+                    <div class="reg-m"><i class="fa-solid fa-users"></i><span>Open to all Sri Lankan Youth</span></div>
                 </div>
-                <div class="stat-card stat-orange">
-                    <i class="fa-solid fa-university"></i>
-                    <div class="stat-number" id="totalSchools">—</div>
-                    <div class="stat-label">Schools / Universities</div>
-                </div>
-                <div class="stat-card stat-green">
-                    <i class="fa-solid fa-star-half-stroke"></i>
-                    <div class="stat-number" id="totalAmbassadors">—</div>
-                    <div class="stat-label">Active Ambassadors</div>
-                </div>
-                <div class="stat-card stat-purple">
-                    <i class="fa-solid fa-globe"></i>
-                    <div class="stat-number" id="totalDistricts">—</div>
-                    <div class="stat-label">Districts Represented</div>
-                </div>
-            </div>
-            <div class="stats-note">
-                <i class="fa-solid fa-circle-info"></i>
-                Stats update automatically from live registration data.
-                <button class="btn-refresh" onclick="loadStats()"><i class="fa-solid fa-rotate-right"></i>
-                    Refresh</button>
+                <a href="/YS-6.0/delegate-registration.html" target="_blank" rel="noopener"
+                    class="btn btn-register btn-lg">
+                    <i class="fa-solid fa-pen-to-square"></i> Register as Delegate
+                </a>
+                <p class="register-note">By registering, you agree to actively participate in all sessions and complete
+                    engagement activities on time.</p>
             </div>
         </div>
     </section>
@@ -462,33 +454,6 @@
                 <div id="lookupLoading" class="lookup-loading" style="display:none"><i
                         class="fa-solid fa-spinner fa-spin"></i>Searching...</div>
             </div>
-            <!--create ambassador stats table with ambassador code name email and university or school-->
-            <div class="ambassador-stats">
-                <div class="stats-header">
-                    <h3><i class="fa-solid fa-chart-bar"></i> Ambassador Stats</h3>
-                    <div class="search-container">
-                        <input type="text" id="ambassadorSearch" placeholder="Search Code, Name, or Uni..." oninput="applyTableLogic()">
-                    </div>
-                </div>
-
-                <table class="table" id="ambassadorTable">
-                    <thead>
-                        <tr>
-                            <th>Code</th>
-                            <th>Name</th>
-                            <th>University/School</th>
-                            <th>Delegate Registrations</th>
-                        </tr>
-                    </thead>
-                    <tbody id="ambassadorTableBody">
-                    </tbody>
-                </table>
-
-                <div style="text-align: center; margin-top: 25px;">
-                    <button id="showMoreBtn" class="nav-cta"
-                        style="display: none; border: none; border-radius: 10%; padding: 10px 25px; font-size: 1rem;">Show More</button>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -516,33 +481,71 @@
         </div>
     </section>
 
-    <!-- ===== DELEGATE REGISTER ===== -->
-    <section class="section register-section" id="register">
-        <div class="register-bg">
-            <!-- register-bg.jpg: Energetic group of young Sri Lankan students at a university event -->
-            <img src="Assets/register-bg.png" alt="Register" class="register-bg-img"
-                onerror="this.style.display='none'" />
-            <div class="register-overlay"></div>
-        </div>
+    <!-- ===== LIVE STATS ===== -->
+    <section class="section live-stats" id="stats">
         <div class="container">
-            <div class="register-content">
-                <span class="eyebrow light">Join the Movement</span>
-                <h2>Register as a <span class="text-orange">Delegate</span> Today</h2>
-                <p>Don't miss this once-in-a-generation opportunity to transform your career journey. Seats are limited
-                    — register now to secure your spot at Youth Space 6.0.</p>
-                <div class="register-meta">
-                    <div class="reg-m"><i class="fa-solid fa-calendar"></i><span>3 Phases · Online + Physical</span>
-                    </div>
-                    <div class="reg-m"><i class="fa-solid fa-map-marker-alt"></i><span>University of Ruhuna &
-                            Online</span></div>
-                    <div class="reg-m"><i class="fa-solid fa-users"></i><span>Open to all Sri Lankan Youth</span></div>
+            <div class="section-header center">
+                <span class="eyebrow">Live Dashboard</span>
+                <h2>Youth Space <span class="gradient-text">by the Numbers</span></h2>
+                <p class="stats-last-updated">Last updated: <span id="lastUpdated">—</span></p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card stat-blue">
+                    <i class="fa-solid fa-users"></i>
+                    <div class="stat-number" id="totalRegistered">—</div>
+                    <div class="stat-label">Total Registered Delegates</div>
                 </div>
-                <a href="/YS-6.0/delegate-registration.html" target="_blank" rel="noopener"
-                    class="btn btn-register btn-lg">
-                    <i class="fa-solid fa-pen-to-square"></i> Register as Delegate
-                </a>
-                <p class="register-note">By registering, you agree to actively participate in all sessions and complete
-                    engagement activities on time.</p>
+                <div class="stat-card stat-orange">
+                    <i class="fa-solid fa-university"></i>
+                    <div class="stat-number" id="totalSchools">—</div>
+                    <div class="stat-label">Schools / Universities</div>
+                </div>
+                <div class="stat-card stat-green">
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                    <div class="stat-number" id="totalAmbassadors">—</div>
+                    <div class="stat-label">Active Ambassadors</div>
+                </div>
+                <div class="stat-card stat-purple">
+                    <i class="fa-solid fa-globe"></i>
+                    <div class="stat-number" id="totalDistricts">—</div>
+                    <div class="stat-label">Districts Represented</div>
+                </div>
+            </div>
+            <div class="stats-note">
+                <i class="fa-solid fa-circle-info"></i>
+                Stats update automatically from live registration data.
+                <button class="btn-refresh" onclick="loadStats()"><i class="fa-solid fa-rotate-right"></i>
+                    Refresh</button>
+            </div>
+        </div>
+        <!--create ambassador stats table with ambassador code name email and university or school-->
+        <div class="ambassador-stats"
+            style="padding: 5%; margin: 30px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+            <div class="stats-header">
+                <h3><i class="fa-solid fa-chart-bar"></i> Ambassador Stats</h3>
+                <div class="search-container">
+                    <input type="text" id="ambassadorSearch" placeholder="Search Code, Name, or Uni..."
+                        oninput="applyTableLogic()">
+                </div>
+            </div>
+
+            <table class="table" id="ambassadorTable">
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Name</th>
+                        <th>University/School</th>
+                        <th>Delegate Registrations</th>
+                    </tr>
+                </thead>
+                <tbody id="ambassadorTableBody">
+                </tbody>
+            </table>
+
+            <div style="text-align: center; margin-top: 25px;">
+                <button id="showMoreBtn" class="nav-cta"
+                    style="display: none; border: none; border-radius: 10%; padding: 10px 25px; font-size: 1rem;">Show
+                    More</button>
             </div>
         </div>
     </section>

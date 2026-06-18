@@ -203,24 +203,12 @@ async function loadStats() {
         const university = amb ? amb[CONFIG.AMB_COL_UNIVERSITY] : 'Unknown';
         const row = document.createElement('tr');
         row.innerHTML = `
-    <td data-label="Code">${escapeHtml(code)}</td>
-    <td data-label="Name">${escapeHtml(name)}</td>
-    <td data-label="University/School">${escapeHtml(university)}</td>
-    <td data-label="Delegate Registrations">${count}</td>
-`;
-tableBody.appendChild(row);
-        // Example of how you are likely building your table rows in JS:
-        // let newRow = document.createElement('tr');
-
-        // // Notice the added data-label attribute inside each <td>!
-        // newRow.innerHTML = `
-        // <td data-label="Code">${ambassadorCode}</td>
-        // <td data-label="Name">${ambassadorName}</td>
-        // <td data-label="University">${universityName}</td>
-        // <td data-label="Registrations">${registrationCount}</td>
-        // `;
-
-        // tableBody.appendChild(newRow);
+        <td data-label="Code">${escapeHtml(code)}</td>
+        <td data-label="Name">${escapeHtml(name)}</td>
+        <td data-label="University / School">${escapeHtml(university)}</td>
+        <td data-label="Delegate Registrations">${count}</td>
+        `;
+        tableBody.appendChild(row);
       });
       applyTableLogic(); // re-apply search and pagination logic after updating the table
     }
@@ -448,9 +436,6 @@ async function lookupAmbassador() {
   }
 }
 
-function updateAmbassadorTable() {
-
-}
 
 // Allow Enter key in lookup input
 document.getElementById('lookupQuery').addEventListener('keydown', e => {

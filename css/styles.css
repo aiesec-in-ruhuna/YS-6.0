@@ -734,6 +734,7 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 .live-stats {
   background: var(--dark);
   color: var(--white);
+  margin-top: 48px;
 }
 .live-stats .eyebrow {
   color: var(--teal);
@@ -1028,7 +1029,7 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 /* --- Table Body & Cells --- */
 .ambassador-stats .table td {
     padding: 16px 20px;
-    border-bottom: 1px solid #eaeaea;
+    border-bottom: 1px solid #3d1d1d;
     color: var(--dark-grey);
     font-size: 0.95rem;
     vertical-align: middle;
@@ -1049,6 +1050,11 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 .ambassador-stats .table td:nth-child(1) {
     font-weight: bold;
     color: var(--purple);
+}
+
+.ambassador-stats .table td:nth-child(2), .ambassador-stats .table td:nth-child(3) {
+    font-weight: light;
+    color: var(--dark);
 }
 
 /* Emphasize the Registration Count (4th column) */
@@ -1570,6 +1576,7 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
         border: none;
         border-bottom: 1px solid #f5f5f5;
         position: relative;
+        color:var(--dark-grey);
         padding: 15px 15px 15px 45%; /* Push text to the right to make room for labels */
         text-align: left; /* Align actual data to the right */
         font-size: 0.95rem;
